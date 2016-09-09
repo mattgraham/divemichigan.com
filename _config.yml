@@ -1,5 +1,5 @@
 destination:      _gh_pages
-baseurl:          "https://madebygraham.com/wrecked/"
+baseurl:          "madebygraham.com/wrecked/"
 safe:           true
 lsi:            false
 include:        [".htaccess"]
