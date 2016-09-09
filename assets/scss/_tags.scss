@@ -1,0 +1,13 @@
+.tag {
+  padding: 2px 8px;
+  font-size: 11px;
+  line-height: 12px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  display: inline-block;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 1px 1px darken(#FA9F47, 15%);
+  background: linear-gradient(to bottom right, #FFD3A0, #FA9F47);
+  border: 1px solid #FA9F47;
+}
