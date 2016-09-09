@@ -1,4 +1,4 @@
-baseurl: /wrecked
+destination:    ./_site
 safe:           true
 lsi:            false
 include:        [".htaccess"]
