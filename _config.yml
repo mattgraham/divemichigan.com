@@ -1,6 +1,4 @@
-source: /wrecked/
-destination:      _gh_pages
-baseurl:          "madebygraham.com/wrecked/"
+baseurl: /wrecked
 safe:           true
 lsi:            false
 include:        [".htaccess"]
