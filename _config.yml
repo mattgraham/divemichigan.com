@@ -1,4 +1,5 @@
-destination:    ./_site
+destination:      _gh_pages
+baseurl:          "https://madebygraham.com/wrecked/"
 safe:           true
 lsi:            false
 include:        [".htaccess"]
