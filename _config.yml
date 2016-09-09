@@ -1,3 +1,4 @@
+source: /wrecked/
 destination:      _gh_pages
 baseurl:          "madebygraham.com/wrecked/"
 safe:           true
