@@ -45,7 +45,6 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
-    redcarpet (2.3.0)
     rouge (1.11.1)
     safe_yaml (1.0.4)
     sass (3.4.22)
@@ -58,7 +57,6 @@ DEPENDENCIES
   compass
   foreman
   jekyll (= 3.2.1)
-  redcarpet
 
 RUBY VERSION
    ruby 2.3.1p112
