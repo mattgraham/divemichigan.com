@@ -1,22 +1,18 @@
-html {
-  font-size: 1em;
-}
-
 body {
-  font-weight: 400;
   line-height: 1.7em;
   color: #333;
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 16px;
+  line-height: 1.7em;
   margin-bottom: 1.47em;
 }
 
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;
   font-weight: inherit;
-  line-height: 1.2;
+  line-height: 1.47;
   letter-spacing: -0.04em;
   color: #111;
 }
@@ -41,4 +37,16 @@ h4 {
 
 small, .font_small {
   font-size: 0.707em;
+}
+
+.margin-none {
+  margin: 0;
+}
+
+.margin-top-none {
+  margin-top: 0;
+}
+
+.margin-bottom-none {
+  margin-bottom: 0;
 }
