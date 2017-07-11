@@ -1,5 +1,5 @@
 ---
-title: Tremble, M. E.
+title: M. E. Tremble (Schooner), U90745
 layout: post
 comments: false
 category: St. Clair River
