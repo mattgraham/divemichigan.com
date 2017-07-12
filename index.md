@@ -1,6 +1,6 @@
 ---
 title: M. E. Tremble (Schooner), U90745
-layout: post
+layout: home
 comments: false
 category: St. Clair River
 location:  Port Huron, MI

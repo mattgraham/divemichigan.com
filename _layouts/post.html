@@ -1,61 +1,61 @@
 {% include head.html %}
 
-<div class="sidebar">
-	{% include nav.html %}
-</div>
+<div id="map" class="pa0 ma0"></div>
 
-<div class="content">
-  <div class="wrapper">
-		<h1 class="margin-none">{{ page.title }}</h1>
-		<h4 class="margin-none">{{ page.location }}</h4>
+<script>
+	L.mapbox.accessToken = 'pk.eyJ1IjoibWF0dGdyYWhhbSIsImEiOiIxQWRqZ3BnIn0.p-Pqtf5oe_tnulEwDY2Hcw';
+	var map = L.mapbox.map('map', 'mapbox.streets')
+		.setView([{{ page.lat }}, {{ page.long }}], 12);
+
+	L.marker([{{ page.lat }}, {{ page.long }}], {
+			icon: L.mapbox.marker.icon({
+					'marker-color': '#fa0'
+			})
+	}).addTo(map);
+
+	// Disable drag and zoom handlers.
+	// map.dragging.disable();
+	map.touchZoom.disable();
+	// map.doubleClickZoom.disable();
+	// map.scrollWheelZoom.disable();
+	// map.keyboard.disable();
+
+	// Disable tap handler, if present.
+	if (map.tap) map.tap.disable();
+</script>
+
+<div class="dib pa3 w-100 mw8 flex-ns center mb5">
+	<div class="w-20-ns pr3 mb4">
+		{% include nav.html %}
+	</div>
+	<div class="w-80-ns">
+		<div class="dib lh-title w-100 f2 mb2 dark-gray">{{ page.title }}</div>
+		<div class="dib lh-title w-100 f5 mv1">{{ page.location }}</div>
 
 		{% if page.lat != null %}
-			<p>{{ page.lat }}, {{ page.long }}</p>
+			<div class="dib w-100 f3 mv4">{{ page.lat }}, {{ page.long }}</div>
 		{% endif %}
 
-		<div id="map"></div>
+		{{ content }}
 
-	  {{ content }}
-
-		<script>
-		  L.mapbox.accessToken = 'pk.eyJ1IjoibWF0dGdyYWhhbSIsImEiOiIxQWRqZ3BnIn0.p-Pqtf5oe_tnulEwDY2Hcw';
-		  var map = L.mapbox.map('map', 'mapbox.streets')
-	      .setView([{{ page.lat }}, {{ page.long }}], 12);
-
-		  L.marker([{{ page.lat }}, {{ page.long }}], {
-		      icon: L.mapbox.marker.icon({
-		          'marker-color': '#fa0'
-		      })
-		  }).addTo(map);
-
-			// Disable drag and zoom handlers.
-			// map.dragging.disable();
-			map.touchZoom.disable();
-			// map.doubleClickZoom.disable();
-			// map.scrollWheelZoom.disable();
-			// map.keyboard.disable();
-
-			// Disable tap handler, if present.
-			if (map.tap) map.tap.disable();
-
-		</script>
+		<div class="f3 black mv3">Specs</div>
+		<div class="">
+			<ul>
+				{% if page.Vessel_Name != null %}<li><strong>Vessel Name:</strong> {{ page.Vessel_Name }}</li>{% endif %}
+				{% if page.Bessel_Type != null %}<li><strong>Bessel Type:</strong> {{ page.Bessel_Type }}</li>{% endif %}
+				{% if page.Year_Built != null %}<li><strong>Year Built:</strong> {{ page.Year_Built }}</li>{% endif %}
+				{% if page.Official_Number != null %}<li><strong>Official Number:</strong> {{ page.Official_Number }}</li>{% endif %}
+				{% if page.Built != null %}<li><strong>Built:</strong> {{ page.Built }}</li>{% endif %}
+				{% if page.Builder != null %}<li><strong>Builder:</strong> {{ page.Builder }}</li>{% endif %}
+				{% if page.Hull_Materials != null %}<li><strong>Hull Materials:</strong> {{ page.Hull_Materials }}</li>{% endif %}
+				{% if page.Length != null %}<li><strong>Length:</strong> {{ page.Length }}</li>{% endif %}
+				{% if page.Beam != null %}<li><strong>Beam:</strong> {{ page.Beam }}</li>{% endif %}
+				{% if page.Depth != null %}<li><strong>Depth:</strong> {{ page.Depth }}</li>{% endif %}
+				{% if page.Weight != null %}<li><strong>Weight:</strong> {{ page.Weight }}</li>{% endif %}
+				{% if page.Lost != null %}<li><strong>Lost:</strong> {{ page.Lost }}</li>{% endif %}
+			</ul>
+		</div>
 	</div>
-</div>
-<div class="sidebar-right">
-	<ul>
-		{% if page.Vessel_Name != null %}<li><strong>Vessel Name:</strong> {{ page.Vessel_Name }}</li>{% endif %}
-		{% if page.Bessel_Type != null %}<li><strong>Bessel Type:</strong> {{ page.Bessel_Type }}</li>{% endif %}
-		{% if page.Year_Built != null %}<li><strong>Year Built:</strong> {{ page.Year_Built }}</li>{% endif %}
-		{% if page.Official_Number != null %}<li><strong>Official Number:</strong> {{ page.Official_Number }}</li>{% endif %}
-		{% if page.Built != null %}<li><strong>Built:</strong> {{ page.Built }}</li>{% endif %}
-		{% if page.Builder != null %}<li><strong>Builder:</strong> {{ page.Builder }}</li>{% endif %}
-		{% if page.Hull_Materials != null %}<li><strong>Hull Materials:</strong> {{ page.Hull_Materials }}</li>{% endif %}
-		{% if page.Length != null %}<li><strong>Length:</strong> {{ page.Length }}</li>{% endif %}
-		{% if page.Beam != null %}<li><strong>Beam:</strong> {{ page.Beam }}</li>{% endif %}
-		{% if page.Depth != null %}<li><strong>Depth:</strong> {{ page.Depth }}</li>{% endif %}
-		{% if page.Weight != null %}<li><strong>Weight:</strong> {{ page.Weight }}</li>{% endif %}
-		{% if page.Lost != null %}<li><strong>Lost:</strong> {{ page.Lost }}</li>{% endif %}
-	</ul>
 </div>
 
 {% include footer.html %}

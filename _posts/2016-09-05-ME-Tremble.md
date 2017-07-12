@@ -1,5 +1,5 @@
 ---
-title: M. E. Tremble (Schooner), U90745
+title: M. E. Tremble (Schooner)
 layout: post
 comments: false
 category: St. Clair River
@@ -7,7 +7,6 @@ location:  Port Huron, MI
 lat: 42.993707
 long: -82.426392
 level: Upper Advanced
-dive_depth: 50 - 70
 Vessel_Name: Tremble, M.E.
 Bessel_Type: Schooner
 Year_Built: 1874
