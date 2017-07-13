@@ -5,7 +5,7 @@
 <script>
 	L.mapbox.accessToken = 'pk.eyJ1IjoibWF0dGdyYWhhbSIsImEiOiIxQWRqZ3BnIn0.p-Pqtf5oe_tnulEwDY2Hcw';
 	var map = L.mapbox.map('map', 'mapbox.streets')
-		.setView([{{ page.lat }}, {{ page.long }}], 12);
+		.setView([{{ page.lat }}, {{ page.long }}], 11);
 
 	L.marker([{{ page.lat }}, {{ page.long }}], {
 			icon: L.mapbox.marker.icon({
@@ -32,13 +32,16 @@
 		<div class="dib lh-title w-100 f2 mb2 dark-gray">{{ page.title }}</div>
 		<div class="dib lh-title w-100 f5 mv1">{{ page.location }}</div>
 
+		{% if page.gps != null %}
+			<div class="dib w-100 f4 dark-gray mv1">{{ page.gps }}</div>
+		{% endif %}
+
 		{% if page.lat != null %}
-			<div class="dib w-100 f3 mv4">{{ page.lat }}, {{ page.long }}</div>
+			<div class="dib w-100 f5 gray mt1 mb3">{{ page.lat }}, {{ page.long }}</div>
 		{% endif %}
 
 		{{ content }}
 
-		<div class="f3 black mv3">Specs</div>
 		<div class="">
 			<ul>
 				{% if page.Vessel_Name != null %}<li><strong>Vessel Name:</strong> {{ page.Vessel_Name }}</li>{% endif %}
