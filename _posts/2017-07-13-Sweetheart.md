@@ -4,9 +4,9 @@ layout: post
 comments: false
 category: St. Clair River
 location:
-gps: N42 02.69 W082 23.289
-lat: 42.044833
-long: -82.388150
+gps: 43°02'30.2"N 82°22'26.8"W
+lat: 43.041734
+long: -82.374115
 level:
 Vessel_Name:
 Bessel_Type:
