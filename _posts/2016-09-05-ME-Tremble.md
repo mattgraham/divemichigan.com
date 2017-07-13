@@ -3,7 +3,7 @@ title: M. E. Tremble (Schooner)
 layout: post
 comments: false
 category: St. Clair River
-location: 
+location:
 gps: 42°59'37.4"N 82°25'35.0"W
 lat: 42.993707
 long: -82.426392
