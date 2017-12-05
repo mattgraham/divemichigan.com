@@ -1,5 +1,5 @@
 ---
-title: M. E. Tremble (Schooner)
+title: ME Tremble
 layout: post
 comments: false
 category: St. Clair River
@@ -10,6 +10,9 @@ long: -82.426392
 level: Upper Advanced
 Vessel_Name: Tremble, M.E.
 Bessel_Type: Schooner
+City: Port Huron
+State: MI
+Country: USA
 Year_Built: 1874
 Official_Number: US90745
 Built: Suamico, WI
