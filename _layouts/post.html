@@ -2,9 +2,6 @@
 
 
 <div class="w-100 mw8 center pa2 mv3 tc">
-		{% if page.image != null %}
-				<!-- <img src="{{page.image}}" alt=""> -->
-		{% endif %}
 		<div class="f1 mb3">{{ page.title }}</div>
 		<div class="ttu f4 b">
 			{% if page.Vessel_Type != null %}
@@ -49,6 +46,13 @@
 
 <div class="flex-ns w-100 mw8 center pa3">
 	<div class="w-100 w-70-ns">
+		{% if page.image != "" %}
+			<div class="flex flex-column">
+				<img src="{{page.image}}" alt="" class="">
+				<div class="mt2 mb4 gray">{{page.image_notes}}</div>
+			</div>
+		{% endif %}
+
 		{{ content }}
 	</div>
 	<div class="dn dib-ns w2"></div>

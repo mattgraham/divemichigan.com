@@ -1,6 +1,7 @@
 ---
 title: Charles S Price
 image: ""
+image_notes:
 layout: post
 customCSS:
 permalink:

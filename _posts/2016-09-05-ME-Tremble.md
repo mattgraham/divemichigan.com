@@ -1,5 +1,7 @@
 ---
 title: ME Tremble
+image: "/assets/images/metremble_1.jpg"
+image_notes: "Diver approaching M.E. Tremble 2016"
 layout: post
 comments: false
 category: St. Clair River
