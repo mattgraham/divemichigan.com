@@ -1,78 +1,69 @@
 {% include head.html %}
 
-<div class="w-100 mw7 center pa2">
-	{% if page.City != null %}
-		<div class="f4 fw1">
-			{{ page.City }}, {{ page.State }}
+
+<div class="w-100 mw8 center pa2 mv3 tc">
+		{% if page.image != null %}
+				<!-- <img src="{{page.image}}" alt=""> -->
+		{% endif %}
+		<div class="f1 mb3">{{ page.title }}</div>
+		<div class="ttu f4 b">
+			{% if page.Vessel_Type != null %}
+				{{ page.Vessel_Type }},
+			{% endif %}
+			{% if page.City != null %}
+				{{ page.City }}, {{ page.State }}
+			{% endif %}
 		</div>
-	{% endif %}
-	<div class="dib lh-title w-100 f1 mb2 dark-gray b ttu">{{ page.title }}</div>
+		<div class="mv2 flex flex-column">
+			{% if page.lat != null %}
+				<div>Coordinates: {{ page.lat }}, {{ page.long }}</div>
+				<a href="https://www.google.com/maps/place/{{ page.lat }}+{{ page.long }}" class="dib" target="_blank">Open in Google Maps</a>
+			{% endif %}
+		</div>
+	</div>
+	<div id="map" class="db pa0 center"></div>
+
+	<script>
+		L.mapbox.accessToken = 'pk.eyJ1IjoibWF0dGdyYWhhbSIsImEiOiIxQWRqZ3BnIn0.p-Pqtf5oe_tnulEwDY2Hcw';
+		var map = L.mapbox.map('map', 'mapbox.streets')
+			.setView([{{ page.lat }}, {{ page.long }}], 13);
+
+		L.marker([{{ page.lat }}, {{ page.long }}], {
+				icon: L.mapbox.marker.icon({
+						'marker-color': '#fa0'
+				})
+		}).addTo(map);
+
+		// Disable drag and zoom handlers.
+		// map.dragging.disable();
+		map.touchZoom.disable();
+		// map.doubleClickZoom.disable();
+		map.scrollWheelZoom.disable();
+		// map.keyboard.disable();
+
+		// Disable tap handler, if present.
+		if (map.tap) map.tap.disable();
+	</script>
 </div>
 
 
-{% if page.image != null %}
-	<div class="db w-100 mw7 center mv3">
-		<img src="{{page.image}}" alt="">
-	</div>
-{% endif %}
-
-<div class="dib ph2 w-100 mw7 flex-ns center">
-	<div class="w-100">
-
-		<!-- {% if page.gps != null %}
-			<div class="dib w-100 f4 dark-gray mv1">{{ page.gps }}</div>
-		{% endif %} -->
-
-		{% if page.lat != null %}
-			<div class="w-100 flex-ns items-center mb4 pa3 bt bb b--light-gray">
-				<div class="f5 dark-gray">GPS: {{ page.lat }}, {{ page.long }}</div>
-				<div class="flex-auto bg-red"></div>
-				<a href="https://www.google.com/maps/place/{{ page.lat }}+{{ page.long }}" class="dib" target="_blank">Open in Google Maps</a>
-			</div>
-		{% endif %}
-
+<div class="flex-ns w-100 mw8 center pa3">
+	<div class="w-100 w-70-ns">
 		{{ content }}
-
-		<div id="map" class="db pa0 mv5 mw7 center"></div>
-
-		<script>
-			L.mapbox.accessToken = 'pk.eyJ1IjoibWF0dGdyYWhhbSIsImEiOiIxQWRqZ3BnIn0.p-Pqtf5oe_tnulEwDY2Hcw';
-			var map = L.mapbox.map('map', 'mapbox.streets')
-				.setView([{{ page.lat }}, {{ page.long }}], 15);
-
-			L.marker([{{ page.lat }}, {{ page.long }}], {
-					icon: L.mapbox.marker.icon({
-							'marker-color': '#fa0'
-					})
-			}).addTo(map);
-
-			// Disable drag and zoom handlers.
-			// map.dragging.disable();
-			map.touchZoom.disable();
-			// map.doubleClickZoom.disable();
-			map.scrollWheelZoom.disable();
-			// map.keyboard.disable();
-
-			// Disable tap handler, if present.
-			if (map.tap) map.tap.disable();
-		</script>
-
-		<div class="">
-			<ul>
-				{% if page.Vessel_Name != null %}<li><strong>Vessel Name:</strong> {{ page.Vessel_Name }}</li>{% endif %}
-				{% if page.Bessel_Type != null %}<li><strong>Bessel Type:</strong> {{ page.Bessel_Type }}</li>{% endif %}
-				{% if page.Year_Built != null %}<li><strong>Year Built:</strong> {{ page.Year_Built }}</li>{% endif %}
-				{% if page.Official_Number != null %}<li><strong>Official Number:</strong> {{ page.Official_Number }}</li>{% endif %}
-				{% if page.Built != null %}<li><strong>Built:</strong> {{ page.Built }}</li>{% endif %}
-				{% if page.Builder != null %}<li><strong>Builder:</strong> {{ page.Builder }}</li>{% endif %}
-				{% if page.Hull_Materials != null %}<li><strong>Hull Materials:</strong> {{ page.Hull_Materials }}</li>{% endif %}
-				{% if page.Length != null %}<li><strong>Length:</strong> {{ page.Length }}</li>{% endif %}
-				{% if page.Beam != null %}<li><strong>Beam:</strong> {{ page.Beam }}</li>{% endif %}
-				{% if page.Depth != null %}<li><strong>Depth:</strong> {{ page.Depth }}</li>{% endif %}
-				{% if page.Weight != null %}<li><strong>Weight:</strong> {{ page.Weight }}</li>{% endif %}
-				{% if page.Lost != null %}<li><strong>Lost:</strong> {{ page.Lost }}</li>{% endif %}
-			</ul>
-		</div>
+	</div>
+	<div class="dn dib-ns w2"></div>
+	<div class="w-100 w-30-ns">
+			{% if page.Vessel_Type != null %}<div class="dib w-100"><strong>Vessel Type:</strong> {{ page.Vessel_Type }}</div>{% endif %}
+			{% if page.Year_Built != null %}<div class="dib w-100"><strong>Year Built:</strong> {{ page.Year_Built }}</div>{% endif %}
+			{% if page.Official_Number != null %}<div class="dib w-100"><strong>Official Number:</strong> {{ page.Official_Number }}</div>{% endif %}
+			{% if page.Built != null %}<div class="dib w-100"><strong>Built:</strong> {{ page.Built }}</div>{% endif %}
+			{% if page.Builder != null %}<div class="dib w-100"><strong>Builder:</strong> {{ page.Builder }}</div>{% endif %}
+			{% if page.Hull_Materials != null %}<div class="dib w-100"><strong>Hull Materials:</strong> {{ page.Hull_Materials }}</div>{% endif %}
+			{% if page.Length != null %}<div class="dib w-100"><strong>Length:</strong> {{ page.Length }}</div>{% endif %}
+			{% if page.Beam != null %}<div class="dib w-100"><strong>Beam:</strong> {{ page.Beam }}</div>{% endif %}
+			{% if page.Depth != null %}<div class="dib w-100"><strong>Depth:</strong> {{ page.Depth }}</div>{% endif %}
+			{% if page.Weight != null %}<div class="dib w-100"><strong>Weight:</strong> {{ page.Weight }}</div>{% endif %}
+			{% if page.Lost != null %}<div class="dib w-100"><strong>Lost:</strong> {{ page.Lost }}</div>{% endif %}
 	</div>
 </div>
 

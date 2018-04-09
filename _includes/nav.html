@@ -1,4 +1,4 @@
-<select name="" id="js-select-nav" class="js-select-nav ml2">
+<select name="" id="js-select-nav" class="w-100 mw5-ns js-select-nav">
   <option value="" disabled selected>Select Location</option>
   {% for post in site.posts reversed | sort: 'date' %}
     <option class="" value="{{ site.url }}{{ post.url }}">{{ post.title }}</option>

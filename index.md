@@ -9,7 +9,7 @@ long: -82.426392
 level: Upper Advanced
 dive_depth: 50 - 70
 Vessel_Name: Tremble, M.E.
-Bessel_Type: Schooner
+Vessel_Type: Schooner
 Year_Built: 1874
 Official_Number: US90745
 Built: Suamico, WI

@@ -9,7 +9,7 @@ lat: 43.399500
 long: -82.441667
 level:
 Vessel_Name:
-Bessel_Type:
+Vessel_Type:
 Year_Built:
 Official_Number:
 Built:

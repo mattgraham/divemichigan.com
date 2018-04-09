@@ -9,7 +9,7 @@ lat: 42.993707
 long: -82.426392
 level: Upper Advanced
 Vessel_Name: Tremble, M.E.
-Bessel_Type: Schooner
+Vessel_Type: Schooner
 City: Port Huron
 State: MI
 Country: USA
