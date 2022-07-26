@@ -1,7 +1,55 @@
 {% include head.html %}
+<div class="bg-yellow">
+	<div class="w-100 mw9 center flex pa4">
+		<div class="w-50 mw8 tc center flex-auto flex flex-column mb5">
+			<div class="flex-auto"></div>
+			<div>
+				<div class="black f2 ttu b mb4">Diving Michigan</div>
+				<div class="f4 lh-copy">This is a quick list of some of our favorite dive sites in Michigan (starting near St. Clair County). This is a growing list and ideally will details, photos, blog posts about each site in the future. For now, enjoy.</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-<script>
-	window.location.replace("/Ben-Hur");
-</script>
+<div class="w-100 mw9 center pa4">
+	<table class="dt w-100">
+		<tr class="dn dt-ns dt--fixed w-100 b f6 black ttu">
+			<td class="bb b--light-gray pa2 b">Wreck Name</td>
+			<td class="bb b--light-gray pa2 b">Location</td>
+			<td class="bb b--light-gray pa2 b">GPS</td>
+			<td class="bb b--light-gray pa2 b">Google Maps</td>
+			<td class="bb b--light-gray pa2 b w1 h1"></td>
+		</tr>
+		{% assign sortedPosts = site.posts | sort: 'title' %}
+		{% for post in sortedPosts %}
+
+		<tr class="pa2 db dt-ns dt--fixed w-100 striped--near-white">
+				<td class="db dtc-ns pa2-ns">
+					<a href="{{ site.url }}{{ post.url }}">
+						{{ post.title }}
+					</a>
+				</td>
+				<td class="db dtc-ns pa2-ns">
+					{% if post.City %}
+						{{ post.City }}, {{ post.State }}
+					{% endif %}
+				</td>
+				<td class="db dtc-ns pa2-ns">
+					{% if post.lat %}
+						{{ post.lat }}
+					{% endif %}, 
+					{% if post.long %}
+						{{ post.long }}
+					{% endif %}
+				</td>
+				<td class="db dtc-ns pa2-ns">
+					<a href="https://www.google.com/maps/place/{{ post.lat }}+{{ post.long }}" class="dib" target="_blank">Open in Google Maps</a>
+				</td>
+				<td class="dn dtc-ns pa2 w1 h1"></td>
+		</tr>
+
+		{% endfor %}
+	</table>
+</div>
 
 {% include footer.html %}

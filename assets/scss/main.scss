@@ -1,4 +1,4 @@
-@import "salesforce-lightning-design-system";
+// @import "salesforce-lightning-design-system";
 @import "variables";
 @import "type";
 @import "mixins";
@@ -9,7 +9,6 @@
 }
 
 body {
-  font-family: 'Salesforce Sans';
   color: #4A4A4A;
   -webkit-font-smoothing:antialiased;
 }
