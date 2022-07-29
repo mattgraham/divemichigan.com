@@ -10,7 +10,7 @@ long: -82.4232
 ---
 
 Build: Wooden Steamer <br />
-Location: St. Clair River, Sarnia <br />
+location: St. Clair River, Sarnia <br />
 Depth: 35' <br />
 Length: 129'9" <br />
 Built: 1882 - Saugatuck, Michigan <br />

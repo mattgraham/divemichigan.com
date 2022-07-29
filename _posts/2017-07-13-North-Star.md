@@ -2,8 +2,8 @@
 title: North Star
 layout: post
 comments: false
-category: St. Clair River
-location:
+category: Lake Huron
+location: Lake Huron
 gps: N43 23.97 W82 26.50
 lat: 43.399500
 long: -82.441667

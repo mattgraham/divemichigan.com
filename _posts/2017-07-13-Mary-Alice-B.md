@@ -3,7 +3,7 @@ title: Mary Alice B
 layout: post
 comments: false
 category: St. Clair River
-location:
+location: Lake Huron
 gps: N43 22.34 W82 26.31
 lat: 43.372333
 long: -82.438500

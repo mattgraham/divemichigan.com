@@ -3,7 +3,7 @@ title: City of Genoa
 layout: post
 comments: false
 category: St. Clair River
-location:
+location: Lake Huron
 gps: N43 08.78 W82 22.31
 lat: 43.146333
 long: -82.371833

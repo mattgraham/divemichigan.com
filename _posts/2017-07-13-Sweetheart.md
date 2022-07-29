@@ -2,8 +2,8 @@
 title: Sweetheart
 layout: post
 comments: false
-category: St. Clair River
-location:
+category: Lake Huron
+location: Lake Huron
 gps: 43°02'30.2"N 82°22'26.8"W
 lat: 43.041734
 long: -82.374115

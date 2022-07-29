@@ -7,13 +7,13 @@ customCSS:
 permalink:
 thumb:
 category: St. Clair River
-location:
 gps: N43 09.17 W82 21.80
 lat: 43.152833
 long: -82.363333
 Depth:
 Vessel_Name: SS Charles S. Price
 Vessel_Type:
+location: Lake Huron
 City: Lakeport
 State: MI
 Country: USA
